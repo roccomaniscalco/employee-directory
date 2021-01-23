@@ -22,13 +22,13 @@ const EmployeeGrid = () => {
   }, []);
 
   return (
-    <table class="table table-striped table-dark">
+    <table className="table table-striped table-dark">
       <thead>
         <tr>
           <th></th>
-          <th scope="col">FIRST</th>
-          <th scope="col">LAST</th>
+          <th scope="col">NAME</th>
           <th scope="col">PHONE</th>
+          <th scope="col">EMAIL</th>
         </tr>
       </thead>
       <tbody>
@@ -37,7 +37,8 @@ const EmployeeGrid = () => {
             key={employee.login.uuid}
             name={employee.name}
             cell={employee.cell}
-            image={employee.picture.medium}
+            image={employee.picture.large}
+            email={employee.email}
           />
         ))}
       </tbody>
