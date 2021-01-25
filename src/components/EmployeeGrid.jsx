@@ -4,6 +4,7 @@ import EmployeeRow from "./EmployeeRow";
 
 const EmployeeGrid = () => {
   const [employees, setEmployees] = useState([]);
+  const [EMPLOYEES, setEMPLOYEES] = useState([]);
 
   useEffect(() => {
     if (!employees) {
@@ -13,6 +14,7 @@ const EmployeeGrid = () => {
     getUsers()
       .then((response) => {
         setEmployees(response.data.results);
+        setEMPLOYEES(response.data.results);
       })
       .catch((err) => {
         console.log(err);
@@ -36,6 +38,15 @@ const EmployeeGrid = () => {
     console.log(employees)
   };
 
+  const filterEmployees = (e) => {
+    const filteredEmployees = EMPLOYEES.filter((EMPLOYEE) => {
+        const numericEMPLOYEE = EMPLOYEE.cell.replace(/[^0-9]/gi, '');
+        const numericQuery = e.target.value.replace(/[^0-9]/gi, '');
+        return numericEMPLOYEE.indexOf(numericQuery) !== -1
+    })
+    setEmployees(filteredEmployees)
+  }
+
   return (
     <table className="table table-striped table-dark">
       <thead>
@@ -44,7 +55,7 @@ const EmployeeGrid = () => {
           <th scope="col">
             NAME <i className="bi bi-sort-down-alt" onClick={sortEmployees}></i>
           </th>
-          <th scope="col">
+          <th scope="col"> 
             PHONE 
           </th>
           <th scope="col">
