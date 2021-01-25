@@ -1,8 +1,7 @@
 import React from "react";
 import EmployeeRow from "./EmployeeRow";
 
-const EmployeeGrid = ({employees, handleSort}) => {
-
+const EmployeeGrid = ({ employees, handleSort }) => {
   return (
     <table className="table table-striped table-dark">
       <thead>
@@ -11,12 +10,8 @@ const EmployeeGrid = ({employees, handleSort}) => {
           <th scope="col">
             NAME <i className="bi bi-sort-down-alt" onClick={handleSort}></i>
           </th>
-          <th scope="col"> 
-            PHONE 
-          </th>
-          <th scope="col">
-            EMAIL 
-          </th>
+          <th scope="col">PHONE</th>
+          <th scope="col">EMAIL</th>
         </tr>
       </thead>
       <tbody>

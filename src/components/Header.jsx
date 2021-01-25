@@ -1,10 +1,18 @@
 import React from "react";
 
-const Header = () => {
+const Header = ({ handleFilter }) => {
   return (
     <nav className="navbar navbar-dark bg-dark">
-      <div className="container-fluid justify-center">
-        <span className="navbar-brand mb-0 h1"></span>
+      <div className="container-fluid">
+        <form className="container-fluid">
+          <input
+            className="form-control me-2"
+            type="search"
+            placeholder="Search by phone number"
+            aria-label="Search"
+            onChange={handleFilter}
+          />
+        </form>
       </div>
     </nav>
   );
