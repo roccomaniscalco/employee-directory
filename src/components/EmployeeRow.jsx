@@ -6,7 +6,7 @@ const EmployeeRow = ({ name, cell, image, email }) => {
       <td>
         <img src={image} alt={name.first + " " + name.last} />
       </td>
-      <td className="align-middle">{name.first + " " + name.last}</td>
+      <td className="align-middle">{name.last + ", " + name.first}</td>
       <td className="align-middle">{cell}</td>
       <td className="align-middle">{email}</td>
     </tr>
